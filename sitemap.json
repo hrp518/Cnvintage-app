@@ -1,0 +1,86 @@
+{
+	"global": {
+		"webviewParameter": {
+			"titleNView": {
+
+				"backgroundColor": "#99CC33",//导航栏背景色
+				"titleColor": "#99CC33", //标题颜色
+				"titleSize": "17px"
+			},
+			"statusbar": {
+				//系统状态栏样式(前景色)
+				"style": "dark"
+			},
+			"appendCss": "",
+			"appendJs": ""
+		},
+		"easyConfig": {
+			"open": {
+				"waiting": false
+			},
+			"quit": {
+				"toast": {
+					"showFeedback": false
+				}
+			},
+			"pullToRefresh": {
+				"support": true
+			}
+		}
+	},
+	"pages": [
+		{
+			"webviewId": "__W2A__www.hrp518.online", //首页
+			"matchUrls": [
+				{
+					"href": "https://www.hrp518.online/cnvintage/"
+				}
+			],
+
+			"webviewParameter": {
+				"appendJs": "detail.append.js",
+				"titleNView": false,
+				"statusbar": {
+					//状态条背景色，
+					//首页不使用原生导航条，颜色值建议和global->webviewParameter->titleNView->backgroundColor颜色值保持一致
+					"background": "#377305"
+				}
+			}
+		}, {
+			"webviewId": "cnvintage",
+			"matchUrls": [
+				{
+					"herf": "https://www.cnvintage.org/"
+				}
+			],
+			"webviewParameter": {
+				"appendCss":".item-link2{display:none}.item-link3{display:none}.item-link4{display:none}", //插入css代码
+
+				"titleNView": false,
+				"statusbar": {
+					//状态条背景色，
+					//首页不使用原生导航条，颜色值建议和global->webviewParameter->titleNView->backgroundColor颜色值保持一致
+					"background": "#377305"
+				}
+			},
+			"easyConfig": {
+				"back": {
+					"before": [
+						{
+							"popupSelector": ".popup", //弹出层选择器
+							"closeSelector": ".mask", //取消按钮选择器或遮罩层选择器
+							"eventType": "click"
+						}
+					]
+				},
+
+				"open": {
+					"animation": {//窗口切换动画配置
+						"type": "slide-in-right",//窗口动画类型
+						"duration": 300
+					}
+				}
+			}
+		}
+	]
+}
